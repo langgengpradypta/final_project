@@ -1,0 +1,152 @@
+@import url('https://fonts.googleapis.com/css?family=Nobile:400,700&display=swap');
+*
+{
+    margin: 0;
+    padding: 0;
+    font-family: 'Nobile';
+}
+body
+{
+    background: #0c362c;
+    min-height: 1500px;
+}
+nav
+{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    min-height: 8vh;
+    font-family: 'Nobile';
+    color: white;
+    background-color: rgb(39, 79, 79);
+}
+.logo
+{
+    color: thistle;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    font-size: 25px;
+}
+.navLink {
+    display: flex;
+    justify-content: space-around;
+    width: 20%;
+}
+.navLink li{
+    list-style: none;
+}
+.navLink a{
+    color: thistle;
+    text-decoration: none;
+    letter-spacing: 3px;
+    font-weight: bold;
+    font-size: 15px;  
+}
+.list{
+
+    display: none;
+    cursor: pointer;
+}
+.list div{
+    width: 25px;
+    height: 3px;
+    background-color: seashell;
+    margin: 5px;
+}
+
+@media screen and (max-width:768px){
+    body{
+        overflow: hidden;
+    }
+    .navLink {
+       position: absolute;
+        right: 0px;
+        height: 92hv;
+        top: 8hv;
+        background-color: sienna;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 50%;
+    }
+    .navLink li{
+        opacity: 0;
+    }
+    .list{
+        display: block;
+    }
+}
+.nav-active {
+    transform: translateX(0%);
+}
+@keyframes navLinkFade{
+    form{
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to{
+        opacity: 1;
+        transform: translateX(0px);
+    }
+}
+h2{
+    color: white;
+    margin-top: 20px;
+    text-align: center;
+}
+p {
+    padding: 30px;
+    font-size: 20px;
+    color: white;
+}
+section
+{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+section::before{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 100px;
+    background: linear-gradient(to top, rgb(39, 79, 79), transparent);
+    z-index: 10000;
+    
+}
+section::after{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #0a2a43 ;
+    z-index: 10000;
+    mix-blend-mode: color;
+}
+
+section img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    pointer-events: none;
+    
+}
+#text {
+    position: relative;
+    color: #fff;
+    font-size: 10em;
+    z-index: 1;
+}
+#road {
+    z-index: 2;
+}
